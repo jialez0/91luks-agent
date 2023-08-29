@@ -1,0 +1,11 @@
+[Unit]
+Description=LUKS key provider agent
+Before=cryptsetup.target
+DefaultDependencies=no
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/luks-agent
+
+[Install]
+WantedBy=initrd-root-fs.target
